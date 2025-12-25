@@ -16,20 +16,20 @@ jobs:
 
     steps:
       - name: Clone Repo Kernel
-        uses: MoeKernel/github-repo-action@v3.1
+        uses: sushikernel/github-repo-action@v3.1
         with:
           depth: 1
           branch: 'sixteen'
-          owner: 'MoeKernel'
+          owner: 'SushiKernel'
           repository: 'android_kernel_motorola_fogos'
           access-token: '${{ secrets.TOKEN_GITHUB }}'
 
       - name: Clone Repo Build
-        uses: MoeKernel/github-repo-action@v3.1
+        uses: sushikernel/github-repo-action@v3.1
         with:
           depth: 1
           branch: 'main'
-          owner: 'MoeKernel'
+          owner: 'SushiKernel'
           repository: 'build'
 
       - name: Prepare Configuration
@@ -39,14 +39,14 @@ jobs:
           echo "ENABLE_CCACHE=$(cat $CONFIG_ENV | grep -w "ENABLE_CCACHE" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
 
       - name: Set swap to 24G
-        uses: MoeKernel/swap@moe
+        uses: SushiKernel/swap@moe
         with:
           swap-size-gb: 10
 
       - name: Clone Repo Scripts
-        uses: MoeKernel/github-repo-action@v3.1
+        uses: SushiKernel/github-repo-action@v3.1
         with:
-          owner: 'MoeKernel'
+          owner: 'SushiKernel'
           branch: 'fogos'
           repository: 'scripts'
 
