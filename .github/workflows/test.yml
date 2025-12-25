@@ -1,4 +1,4 @@
-name: Build Kernel fogos Sixteen sm6375
+name: Build Kernel fogos sm6375
 
 on:
   workflow_dispatch:
