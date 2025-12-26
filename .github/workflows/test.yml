@@ -19,7 +19,7 @@ jobs:
         uses: sushikernel/github-repo-action@v3.1
         with:
           depth: 1
-          branch: 'sixteen'
+          branch: 'test'
           owner: 'SushiKernel'
           repository: 'android_kernel_motorola_sm6375'
           access-token: '${{ secrets.TOKEN_GITHUB }}'
