@@ -1,4 +1,4 @@
-name: Build Kernel [main fogos]
+name: Build Kernel fogos Sixteen
 
 on:
   workflow_dispatch:
