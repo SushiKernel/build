@@ -2,6 +2,11 @@ name: Build Kernel fogos sm6375
 
 on:
   workflow_dispatch:
+    inputs:
+      kernel_branch:
+        description: 'Kernel branch to compile'
+        required: true
+        default: 'sixteen'
 
 env:
   TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
@@ -19,7 +24,7 @@ jobs:
         uses: sushikernel/github-repo-action@v3.1
         with:
           depth: 1
-          branch: 'test'
+          branch: '${{ github.event.inputs.kernel_branch }}'
           owner: 'SushiKernel'
           repository: 'android_kernel_motorola_sm6375'
           access-token: '${{ secrets.TOKEN_GITHUB }}'
