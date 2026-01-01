@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repo Clang
-        uses: MoeKernel/github-repo-action@v3.1
+        uses: SushiKernel/github-repo-action@v3.1
         with:
           owner: MoeKernel
           repository: clang
