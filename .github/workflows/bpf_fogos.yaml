@@ -19,7 +19,7 @@ jobs:
         uses: sushikernel/github-repo-action@v3.1
         with:
           depth: 1
-          branch: 'bpf_patch'
+          branch: 'sixteen-qpr2'
           owner: 'SushiKernel'
           repository: 'android_kernel_motorola_fogos'
           access-token: '${{ secrets.TOKEN_GITHUB }}'
