@@ -1,4 +1,4 @@
-name: Build Kernel bangkk Sixteen
+name: Build Kernel bangkk Sixteen-qpr2
 
 on:
   workflow_dispatch:
@@ -19,7 +19,7 @@ jobs:
         uses: sushikernel/github-repo-action@v3.1
         with:
           depth: 1
-          branch: 'sixteen'
+          branch: 'sixteen-qpr2'
           owner: 'SushiKernel'
           repository: 'android_kernel_motorola_bangkk'
           access-token: '${{ secrets.TOKEN_GITHUB }}'
