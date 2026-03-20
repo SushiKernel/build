@@ -54,10 +54,10 @@ jobs:
         working-directory: ./scripts
         run: |
           chmod +x bot.py bot.sh ksu_update.sh moe.sh
-          cp moe.sh ksu_update.sh bot.sh bot.py build_count.txt ../android_kernel_motorola_fogos
+          cp moe.sh ksu_update.sh bot.sh bot.py build_count.txt ../android_kernel_motorola_sedona
 
       - name: Github Configs
-        working-directory: ./android_kernel_motorola_fogos
+        working-directory: ./android_kernel_motorola_sedona
         run: |
           git config --global user.email "akariondev@gmail.com"
           git config --global user.name "fogos"
@@ -68,7 +68,7 @@ jobs:
          sudo apt-get -y --no-install-recommends install libarchive-tools # cpio flex bc git make git
 
       - name: Export Variables
-        working-directory: ./android_kernel_motorola_fogos
+        working-directory: ./android_kernel_motorola_sedona
         run: |
          echo "CHAT_ID=${{ secrets.CHAT_ID }}" >> .env
          echo "API_ID=${{ secrets.API_ID }}" >> .env
@@ -76,12 +76,12 @@ jobs:
          echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" >> .env
 
       - name: Compile Kernel CI
-        working-directory: ./android_kernel_motorola_fogos
+        working-directory: ./android_kernel_motorola_sedona
         run: |
           ./bot.sh
 
       - name: Move CI Build
-        working-directory: ./android_kernel_motorola_fogos
+        working-directory: ./android_kernel_motorola_sedona
         run: |
           cp build_count.txt ../scripts
 
