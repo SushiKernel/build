@@ -73,6 +73,13 @@ jobs:
           key: bangkk-clang21
           max-size: 10G
 
+      - name: Configure Ccache
+        run: |
+          ccache --set-config=compiler_check=content
+          ccache --set-config=hash_dir=false
+          ccache --set-config=hard_link=true
+          ccache -s
+
       - name: Export Variables
         working-directory: ./android_kernel_motorola_bangkk
         run: |
