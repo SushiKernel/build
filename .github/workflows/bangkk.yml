@@ -10,7 +10,7 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     env:
-      CCACHE_COMPILERCHECK: "%compiler% -dumpmachine; %compiler% -dumpversion"
+      CCACHE_COMPILERCHECK: "content"
       CCACHE_NOHASHDIR: "true"
       CCACHE_HARDLINK: "true"
 
@@ -65,7 +65,13 @@ jobs:
       - name: Install Dependencies
         run: |
          sudo apt-get update
-         sudo apt-get -y --no-install-recommends install libarchive-tools # cpio flex bc git make git
+         sudo apt-get -y --no-install-recommends install libarchive-tools ccache
+
+      - name: Ccache for SushiKernel
+        uses: SushiKernel/ccache@v1.2.23
+        with:
+          key: bangkk-clang21
+          max-size: 10G
 
       - name: Export Variables
         working-directory: ./android_kernel_motorola_bangkk
