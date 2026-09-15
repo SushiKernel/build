@@ -15,7 +15,7 @@ jobs:
         uses: sushikernel/github-repo-action@v3.1
         with:
           depth: 1
-          branch: 'seventeen'
+          branch: 'modules'
           owner: 'SushiKernel'
           repository: 'android_kernel_motorola_bangkk'
           access-token: '${{ secrets.TOKEN_GITHUB }}'
