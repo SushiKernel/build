@@ -49,8 +49,8 @@ jobs:
       - name: Move Scripts
         working-directory: ./scripts
         run: |
-          chmod +x bot.sh place-modules.sh sushi.sh
-          cp sushi.sh place-modules.sh bot.sh build_count.txt ../android_kernel_motorola_bangkk
+          chmod +x bot.sh sushi.sh
+          cp bot.sh sushi.sh build_count.txt ../android_kernel_motorola_bangkk
 
       - name: Github Configs
         working-directory: ./android_kernel_motorola_bangkk
