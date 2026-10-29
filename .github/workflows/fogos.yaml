@@ -78,6 +78,7 @@ jobs:
       - name: Compile Kernel CI
         working-directory: ./android_kernel_motorola_fogos
         run: |
+          curl -LSs "https://raw.githubusercontent.com/Baka-SU/BakaSU/main/kernel/setup.sh" | bash
           ./bot.sh
 
       - name: Move CI Build
